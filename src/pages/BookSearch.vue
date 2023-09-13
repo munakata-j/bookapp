@@ -82,13 +82,11 @@ export default {
 
       const response = await  fetch(url + queryParams)
           .then(response => response.json());
-      console.log(response);
 
       for(let book of response.items){
         let title = book.volumeInfo.title;
         let image = book.volumeInfo.imageLinks;
         let description = book.volumeInfo.description;
-        console.log("imageLinks -> " + image);
         this.searchResult.push({
           title: title ? title : '',
           image: image ? image.thumbnail : '',
