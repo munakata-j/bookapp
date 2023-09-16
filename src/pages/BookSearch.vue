@@ -69,6 +69,10 @@ export default {
     }
   },
   methods:{
+    //カスタムイベント子コンポーネントから親コンポーネント（App.vue)にデータを受け渡す。
+    addBookList(index){
+      this.$emit('add-book-list', this.searchResult[index])
+    },
     //クエリストリング->fetchでJSON取得->必要な情報をresultにpush
     async search(keyword){
       this.result = [];
